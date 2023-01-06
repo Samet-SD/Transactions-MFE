@@ -12,7 +12,7 @@ const prodConfig = {
     },
    plugins: [
     new ModuleFederationPlugin({
-        name: 'Transactions',
+        name: 'transactions',
         filename: 'remoteEntry.js',
         exposes: {
             './Transactions': '/src/bootstrap'
