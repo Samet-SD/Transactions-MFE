@@ -4,7 +4,9 @@ import CommonButton from '../components/common/CommonButton';
 import { Box } from '@mui/material';
 import { Padding } from '@mui/icons-material';
 import Datatable from '../components/common/Datatable';
-import UserTable from '../components/UserTable';
+import { Link } from 'react-router-dom';
+import TransactionsTable from './TransactionsTable';
+
 const Transactions = () => {
   const buttonStyles = {
     frontSize: '0.875rem',
@@ -22,21 +24,18 @@ const Transactions = () => {
   
     <Grid item xs={8}>
       <Box display="flex" justifyContent="center" marginTop="-10px" padding="40px" backgroundColor="#009be5">
-            This is authentication page.
+            <h1>Transactions</h1>.
+            
+            <Link to ="/pdf-data">
             <CommonButton
                 sx={buttonStyles}
                 variant="contained"
             >
-                Add user
+                Download PDF
             </CommonButton>
-            <CommonButton
-                sx={buttonStyles}
-                variant="outlined"
-            >
-                Add user
-            </CommonButton>
+            </Link>
             </Box>
-            <UserTable />
+            <TransactionsTable />
         </Grid>
        
     )

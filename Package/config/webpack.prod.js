@@ -17,7 +17,13 @@ const prodConfig = {
         exposes: {
             './Transactions': '/src/bootstrap'
         },
-        shared: packageJson.dependencies
+        //shared: packageJson.dependencies
+        shared: {
+            react: {
+                singleton: true,
+            },
+            
+        }
     })
 
    ]

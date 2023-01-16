@@ -1,19 +1,19 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, Router } from 'react-router-dom'
 
 import Transactions from './components/Transactions'
+import PdfData from './components/PdfData'
 
-
-const App = () => {
+const App = ({ history }) => {
   return (
     <div>
     
-      <BrowserRouter>
+      <Router history={history}>
       <Switch>
-      
       <Route exact path="/" component={Transactions} />
+      <Route exact path="/" component={PdfData} />
       </Switch>
-      </BrowserRouter>
+      </Router>
     
     </div>
   )

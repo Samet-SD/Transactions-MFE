@@ -15,22 +15,22 @@ const columns = [
 ];
 
 
-const UserTable = () => {
+const TransactionsTable = () => {
     
 
     useEffect(() => {
-        //fetch('https://jsonplaceholder.typicode.com/users')
         fetch('http://localhost:8085/transactions')
         .then((response) => response.json())
-        .then((json) => setUser(json));
-        //.then(json => console.log(json))
+        .then((json) => setTransactions(json));
     }, [])
 
-    const [user, setUser] = useState([]);
+    const [transactions, setTransactions] = useState([]);
     return (
+     
      <Box sx={{left: "30%", height: 400,position: "relative", width: '50%',display:"flex", justifyContent:"center" }}>
-    <Datatable
-       rows={user}
+    
+    <Datatable 
+       rows={transactions}
        columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
@@ -38,8 +38,9 @@ const UserTable = () => {
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
      />
+     
     </Box>
   )
 }
 
-export default UserTable
+export default TransactionsTable
